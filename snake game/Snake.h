@@ -2,54 +2,31 @@
 #include <string.h>
 #include <math.h>
 #include <time.h>
+#include "Game.h"
 
+const int s = 25;
 
 using namespace std;
+enum direction{up,down,left,right};
 
 struct Point {
 	int x;
 	int y;
 	int index;
-
 };
 
 
-class Game {
-protected:
-	int size;
-	Point map[25][25];
-	int score;
-};
 class Snake : public Game
 {
 private:
-	enum direction{up,down,left,right};
 	direction dir;
 	int length;
 	Point points[5];
-	string name;
+	char body;
 public:
-	
+	Snake();
 
-
-	Snake(int length, string name)
-		: length(length), name(name)
-	{
-
-	}
+	void display();
 };
 
 
-class Coin {
-public:
-	int x;
-	int y;
-
-
-
-	Coin(){
-		x = rand()%100;
-		y = rand()%100;
-		cout << x << " " << y;
-	}
-};
