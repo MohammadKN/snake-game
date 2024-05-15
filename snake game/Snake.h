@@ -22,7 +22,7 @@ protected:
 };
 class Snake
 {
-protected:
+private:
 	enum direction{up,down,left,right};
 	direction dir;
 	int length;
