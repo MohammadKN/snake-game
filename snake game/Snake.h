@@ -24,6 +24,7 @@ class Snake
 {
 protected:
 	enum direction{up,down,left,right};
+	direction dir;
 	int length;
 	Point points[5];
 	string name;
