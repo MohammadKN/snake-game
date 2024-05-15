@@ -17,10 +17,10 @@ struct Point {
 class Game {
 protected:
 	int size;
-	Point map[20][20];
+	Point map[25][25];
 	int score;
 };
-class Snake
+class Snake : public Game
 {
 protected:
 	enum direction{up,down,left,right};
