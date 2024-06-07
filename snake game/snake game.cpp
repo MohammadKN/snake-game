@@ -1,19 +1,20 @@
 #include <iostream>
-#include <cstdlib> 
-#include <time.h>
-#include "Snake.h"
+#include <conio.h>
+#include <windows.h>
+#include "classes.h"
 
 using namespace std;
 
+int main() {
+    Game game;
+    Snake snake;
+    while (!snake.getGameOver()) {
+        snake.draw();
+        snake.movement();
+        snake.tailMovement();
+        Sleep(150 - game.getSpeed());
+    }
 
-
-int main()
-{
-	int x = rand() % 100;
-	int y = rand() % 100;
-	srand(time(0));
-
-	Snake snake;
-	snake.display();
-
+    cout << "You lose! The head touched the tail. Your score: " << snake.getScore() << endl;
+    return 0;
 }
